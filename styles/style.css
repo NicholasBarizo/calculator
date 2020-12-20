@@ -47,12 +47,72 @@ table {
 	border-spacing: 0;
 }
 
+
 h1{
     color: white;
     margin: 30px auto;
     font-size: 30px;
     text-align: center;
 }
-body{
-    background-color: hsl(0 0% 20%);
+
+/* || CALCULATOR */
+#calculator{
+	border: 1px solid black;
+	width: 400px;
+	height: 500px;
+	background-color: hsl( 0 0% 20%);
+	margin: 0 auto;
+	position: relative;
+	background-color: hsl(0 0% 20%);
+}
+#display{
+	height: 70px;
+	display: flex;
+	justify-content: end;
+	margin: 15px;
+	background-color: hsl(0 0% 50%);
+
+}
+#displayNumber{
+	margin: 0 10px;
+	font-size: 50px;
+	align-self: center;	
+	color: white;
+}
+
+#numberButtons{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	width: 300px;
+}
+.numberButton{
+	height: 100px;
+	width: 100px;
+	background-color: #2274A5;
+	border: 1px solid black;
+}
+.numberButton:hover{
+	opacity: 60%;
+}
+#decimalButton{
+	width: 200px;
+	grid-column-end: span 2;
+}
+
+#operatorButtons{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	top: 100px;
+}
+.operatorButton{
+	height: 100px;
+	width: 100px;
+	background-color: #1DD3B0;
+	border: 1px solid black;
+	border-radius: 50px;
+}
+.operatorButton:hover{
+	opacity: 60%;
 }
