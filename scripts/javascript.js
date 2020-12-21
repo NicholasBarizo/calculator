@@ -1,2 +1,2 @@
-const header = document.getElementById('header');
-header.style.setProperty('color', 'red'); 
+const displayNumber = document.getElementById('displayNumber');
+displayNumber.textContent = 'fdgjodifg';

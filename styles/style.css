@@ -58,19 +58,20 @@ h1{
 /* || CALCULATOR */
 #calculator{
 	border: 1px solid black;
-	width: 400px;
-	height: 500px;
+	width: 450px;
+	height: 665px;
 	background-color: hsl( 0 0% 20%);
 	margin: 0 auto;
 	position: relative;
 	background-color: hsl(0 0% 20%);
 }
 #display{
-	height: 70px;
+	height: 100px;
 	display: flex;
 	justify-content: end;
-	margin: 15px;
+	margin: 15px 15px 10px 15px;
 	background-color: hsl(0 0% 50%);
+	border-radius: 6px;
 
 }
 #displayNumber{
@@ -78,24 +79,32 @@ h1{
 	font-size: 50px;
 	align-self: center;	
 	color: white;
+	font-family: arial;
 }
 
 #numberButtons{
 	display: grid;
 	grid-template-columns: auto auto auto;
 	width: 300px;
+	margin-left: 12px;
 }
 .numberButton{
 	height: 100px;
 	width: 100px;
 	background-color: #2274A5;
-	border: 1px solid black;
+	border: none;
+	font-size: 50px;
+	margin: 3px;
 }
 .numberButton:hover{
 	opacity: 60%;
 }
 #decimalButton{
-	width: 200px;
+	width: 206px;
+	grid-column-end: span 2;
+}
+#clearButton{
+	width: 206px;
 	grid-column-end: span 2;
 }
 
@@ -104,14 +113,17 @@ h1{
 	flex-direction: column;
 	position: absolute;
 	right: 0;
-	top: 100px;
+	bottom: 10px;
+	margin-right: 12px;
 }
 .operatorButton{
 	height: 100px;
 	width: 100px;
 	background-color: #1DD3B0;
 	border: 1px solid black;
-	border-radius: 50px;
+	font-size: 50px;
+	/* border-radius: 50px; */
+	margin: 3px;
 }
 .operatorButton:hover{
 	opacity: 60%;
