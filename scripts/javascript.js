@@ -27,6 +27,10 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
                 operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
             });
         }
+        else if(numberButtonSelected.textContent == '+/-'){
+            console.log('sdf');
+            displayNumber.textContent *= -1;
+        }
         else if(displayNumber.textContent.length >= 14){}
         else if(displayNumber.textContent == '0'){
             if(numberButtonSelected.innerHTML != '0'){
@@ -65,8 +69,7 @@ Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
             operatorPressed = true;
             displayNumber.textContent = '0';
 
-           
-            console.log(operator);
+
             console.log(num2);
         }
         else{
