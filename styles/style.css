@@ -62,7 +62,7 @@ h1{
 	height: 665px;
 	background-color: #1A181B;
 	margin: 0 auto;
-	position: relative;
+	position: relative; 
 }
 #display{
 	height: 100px;
@@ -82,10 +82,13 @@ h1{
 }
 
 #numberButtons{
+	/* outline: 1px solid green; */
+	direction: rtl;
 	display: grid;
 	grid-template-columns: auto auto auto;
 	width: 300px;
-	margin-left: 12px;
+	margin-left: 30px;
+	
 }
 .numberButton{
 	height: 100px;

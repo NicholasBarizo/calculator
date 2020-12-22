@@ -7,6 +7,12 @@ let canDecimal = true;
 Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
 
     numberButtonSelected.addEventListener('click', () => {
+        if(operatorPressed == true){
+            Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
+                operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
+            });
+            operatorPressed = false;
+        }
         if(numberButtonSelected.textContent == '.'){
             if(canDecimal == true){
                 displayNumber.textContent += numberButtonSelected.innerHTML;
@@ -36,10 +42,48 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
         }
     });
 });
-
+let operatorPressed = false;
+let operator;
+let num1;
+let num2;
 Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
     operatorButtonSelected.addEventListener('click', () => {
-        operatorButtonSelected.style.setProperty('background-color', '#F7EF81');
+        if(operatorButtonSelected.id != 'equalsButton'){
+            if(operatorPressed == false){
+                num2 = num1;
+                num1 = displayNumber.textContent;
+                console.log(num1);
+                console.log(num2);
+            }
+            else if(operatorPressed == true){
+                Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
+                    operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
+                });
+            }
+            operatorButtonSelected.style.setProperty('background-color', '#F7EF81');
+            operator = operatorButtonSelected.id;
+            operatorPressed = true;
+            displayNumber.textContent = '0';
+
+           
+            console.log(operator);
+            console.log(num2);
+        }
+        else{
+            if(operator == '*'){
+                num2 *= num1;
+            }
+            else if(operator == '/'){
+                num2 /= num1;
+            }
+            else if (operator == '+'){
+                num2 += num1;
+            }
+            else if(operator == '-'){
+                num2 -= num1;
+            }
+            displayNumber.textContent = num2;
+        }
     });
 });
 
