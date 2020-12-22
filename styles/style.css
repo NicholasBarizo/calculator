@@ -60,10 +60,9 @@ h1{
 	border: 1px solid black;
 	width: 450px;
 	height: 665px;
-	background-color: hsl( 0 0% 20%);
+	background-color: #1A181B;
 	margin: 0 auto;
 	position: relative;
-	background-color: hsl(0 0% 20%);
 }
 #display{
 	height: 100px;
