@@ -4,6 +4,8 @@ const operatorButton  = document.getElementsByClassName('operatorButton');
 
 displayNumber.textContent = '0';
 let canDecimal = true;
+let num1 = 0;
+let num2 = 0;
 Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
 
     numberButtonSelected.addEventListener('click', () => {
@@ -26,6 +28,8 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
             Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                 operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
             });
+            num1 = 0;
+            num2 = 0;
         }
         else if(numberButtonSelected.textContent == '+/-'){
             console.log('sdf');
@@ -48,18 +52,17 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
 });
 let operatorPressed = false;
 let operator;
-let num1;
-let num2;
+
 Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
     operatorButtonSelected.addEventListener('click', () => {
+        if(operatorPressed == false){
+            num2 = num1;
+            num1 = displayNumber.textContent;
+            console.log(num1 + 'num1');
+            console.log(num2 + 'num2');
+        }
         if(operatorButtonSelected.id != 'equalsButton'){
-            if(operatorPressed == false){
-                num2 = num1;
-                num1 = displayNumber.textContent;
-                console.log(num1);
-                console.log(num2);
-            }
-            else if(operatorPressed == true){
+            if(operatorPressed == true){
                 Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                     operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
                 });
@@ -80,7 +83,7 @@ Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                 num2 /= num1;
             }
             else if (operator == '+'){
-                num2 += num1;
+                num2 = Number(num1) + Number(num2);
             }
             else if(operator == '-'){
                 num2 -= num1;
