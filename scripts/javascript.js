@@ -30,7 +30,7 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
             num1 = 0;
             num2 = 0;
         }
-        else if(numberButtonSelected.textContent == '+/-'){
+        else if(numberButtonSelected.textContent == '-/+'){
             console.log('sdf');
             displayNumber.textContent *= -1;
         }
@@ -80,7 +80,7 @@ Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
             }
             else if(operator == '/'){
                 if(num1 == 0){
-                    num2 = 'Try Again';
+                    num2 = 'DUMB BASQUE';
                 }
                 else{
                     num2 /= num1;
