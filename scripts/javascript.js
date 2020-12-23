@@ -2,7 +2,6 @@ const displayNumber = document.getElementById('displayNumber');
 const numberButton = document.getElementsByClassName('numberButton');
 const operatorButton  = document.getElementsByClassName('operatorButton');
 
-displayNumber.textContent = '0';
 let canDecimal = true;
 let num1 = 0;
 let num2 = 0;
@@ -80,7 +79,12 @@ Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                 num2 *= num1;
             }
             else if(operator == '/'){
-                num2 /= num1;
+                if(num1 == 0){
+                    num2 = 'Try Again';
+                }
+                else{
+                    num2 /= num1;
+                }
             }
             else if (operator == '+'){
                 num2 = Number(num1) + Number(num2);
