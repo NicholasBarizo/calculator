@@ -8,6 +8,7 @@ let num2 = 0;
 Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
 
     numberButtonSelected.addEventListener('click', () => {
+        displayNumber.textContent += numberButtonSelected.innerHTML;
         if(operatorPressed == true){
             Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                 operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
@@ -22,7 +23,6 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
         }
         else if(numberButtonSelected.textContent == 'CLEAR'){
             displayNumber.textContent = '0';
-            console.log('hi');
             canDecimal = true;
             Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
                 operatorButtonSelected.style.setProperty('background-color', '#1dd3b0');
@@ -31,7 +31,6 @@ Array.prototype.forEach.call(numberButton, function(numberButtonSelected) {
             num2 = 0;
         }
         else if(numberButtonSelected.textContent == '-/+'){
-            console.log('sdf');
             displayNumber.textContent *= -1;
         }
         else if(displayNumber.textContent.length >= 14){}
@@ -80,7 +79,7 @@ Array.prototype.forEach.call(operatorButton, function(operatorButtonSelected) {
             }
             else if(operator == '/'){
                 if(num1 == 0){
-                    num2 = 'DUMB BASQUE';
+                    num2 = 'Try Again';
                 }
                 else{
                     num2 /= num1;
