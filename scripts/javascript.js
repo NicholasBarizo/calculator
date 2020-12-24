@@ -4,6 +4,9 @@ const operatorButtons  = document.querySelectorAll('button.operatorButton');
 let num1 = 0;
 let num2 = 0;
 let canDecimal = true;
+let operatorPressed = false;
+let operator;
+
 document.body.addEventListener('click', function (event) {
     if(event.target.classList.contains('numberButton')) {
         clickNumberButton(event.target);
@@ -21,10 +24,8 @@ document.body.addEventListener('touchstart', function(event) {
     }
 });
 
-let operatorPressed = false;
-let operator;
-
 function clickOperatorButton(operatorButtonSelected) {
+    // operatorButtonSelected(preventDefault)
     if(operatorPressed == false){ //Turn inputs into
         num2 = num1;
         num1 = displayNumber.textContent;
@@ -111,6 +112,8 @@ function clickNumberButton(numberButtonSelected) {
         else{
             displayNumber.textContent += numberButtonSelected.innerHTML;
         }
+        numberButtonSelected.preventDefault();
+
     // });
 }
 
