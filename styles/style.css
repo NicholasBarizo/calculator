@@ -97,6 +97,7 @@ h1{
 	border: none;
 	font-size: 50px;
 	margin: 3px;
+	text-align: center;
 }
 .numberButton:hover{
 	opacity: 60%;
@@ -122,11 +123,15 @@ h1{
 	height: 100px;
 	width: 100px;
 	background-color: #1DD3B0;
-	border: 1px solid black;
+	border: none;
 	font-size: 50px;
 	/* border-radius: 50px; */
 	margin: 3px;
+	text-align: center;
 }
 .operatorButton:hover{
 	opacity: 60%;
+}
+body{
+	background-color: #CFC0BD
 }

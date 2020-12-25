@@ -72,6 +72,8 @@ function calculateAnswer(operator, num1, num2) {
 }
 
 function clickNumberButton(numberButtonSelected) {
+    // numberButtonSelected.stopPropagation();
+    // numberButtonSelected.preventDefault();
     // console.log(numberButtonSelected);
     // numberButtonSelected.addEventListener('click', () => {
         if(operatorPressed == true){
@@ -112,7 +114,7 @@ function clickNumberButton(numberButtonSelected) {
         else{
             displayNumber.textContent += numberButtonSelected.innerHTML;
         }
-        numberButtonSelected.preventDefault();
+       
 
     // });
 }
