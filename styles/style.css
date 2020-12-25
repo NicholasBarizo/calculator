@@ -88,7 +88,8 @@ h1{
 	grid-template-columns: auto auto auto;
 	width: 300px;
 	margin-left: 30px;
-	
+	align-content: center;
+	align-items: center;
 }
 .numberButton{
 	height: 100px;
@@ -98,6 +99,9 @@ h1{
 	font-size: 50px;
 	margin: 3px;
 	text-align: center;
+	align-items: center;
+	align-self: center;
+	align-content: center;
 }
 .numberButton:hover{
 	opacity: 60%;
